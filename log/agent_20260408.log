@@ -1,0 +1,13 @@
+2026-04-08 20:20:02,750 - agent - INFO - middleware.py:40 - [log_before_model]即将调用模型，带有1条消息
+2026-04-08 20:20:02,750 - agent - DEBUG - middleware.py:42 - [log_before_model]HumanMessage | 扫地机器人怎么保养
+2026-04-08 20:20:06,192 - agent - INFO - middleware.py:20 - [tool monitor]执行工具，rag_summarize
+2026-04-08 20:20:06,192 - agent - INFO - middleware.py:21 - [tool monitor]传入参数：{'query': '扫地机器人保养方法'}
+2026-04-08 20:20:09,803 - agent - INFO - middleware.py:26 - [tool monitor]工具rag_summarize调用成功
+2026-04-08 20:20:10,708 - agent - INFO - middleware.py:40 - [log_before_model]即将调用模型，带有3条消息
+2026-04-08 20:20:10,710 - agent - DEBUG - middleware.py:42 - [log_before_model]ToolMessage | 定期清理滚刷和边刷上的缠绕物，清空尘盒并清洗滤网（部分型号支持水洗），检查并清理传感器和充电触点，避免在潮湿或有液体的地面上使用，长时间不用时应取出电池并存放于干燥处。
+2026-04-08 20:32:26,862 - agent - INFO - vector_store.py:79 - 加载知识库:D:\AI大模型RAG与智能体开发——Agent项目\data\扫地机器人100问.pdf内容已经存在在知识库中
+2026-04-08 20:32:26,863 - agent - INFO - vector_store.py:79 - 加载知识库:D:\AI大模型RAG与智能体开发——Agent项目\data\扫地机器人100问2.txt内容已经存在在知识库中
+2026-04-08 20:32:26,865 - agent - INFO - vector_store.py:79 - 加载知识库:D:\AI大模型RAG与智能体开发——Agent项目\data\扫拖一体机器人100问.txt内容已经存在在知识库中
+2026-04-08 20:32:26,866 - agent - INFO - vector_store.py:79 - 加载知识库:D:\AI大模型RAG与智能体开发——Agent项目\data\故障排除.txt内容已经存在在知识库中
+2026-04-08 20:32:26,867 - agent - INFO - vector_store.py:79 - 加载知识库:D:\AI大模型RAG与智能体开发——Agent项目\data\维护保养.txt内容已经存在在知识库中
+2026-04-08 20:32:26,867 - agent - INFO - vector_store.py:79 - 加载知识库:D:\AI大模型RAG与智能体开发——Agent项目\data\选购指南.txt内容已经存在在知识库中
