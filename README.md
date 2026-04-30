@@ -156,7 +156,6 @@ docker run -d -p 8000:8000 --env-file .env rag-agent-api
 - 前端对话界面重构为 React/Vue
 
 ## 接入FastAPI的好处
-是的，按照上述方式改造后，你的项目就**真正接入了 FastAPI**——原来的 RAG + LangGraph 核心逻辑完全保留，只是在外面包裹了一层标准的 HTTP API 服务。封装后的主要用处如下：
 
 ### 1. 从「本地工具」升级为「可远程调用的服务」
 - **之前**：可能是 Streamlit 本地界面，或只能在 Python 脚本里直接调用 Agent。
@@ -201,14 +200,6 @@ docker run -d -p 8000:8000 --env-file .env rag-agent-api
 | 性能受限于 Streamlit 单线程 | 异步高并发，支持负载均衡 |
 
 **总结**：封装成 FastAPI 并非只是“换个框架”，而是让你的 RAG+LangGraph Agent 从一个**脚本/工具**，进化为一个**企业级、可扩展、易协作的后端服务**。如果你需要我帮你把原来的 `agent` 模块中某个具体类（比如 `YourLangGraphAgent`）封装成 FastAPI 依赖的示例代码，请贴出关键片段，我可以直接为你写适配代码。
-
-## 关于作者
-
-- 学校：河海大学 软件工程 2024 级
-- 技术栈：Python, FastAPI, LangGraph, LangChain, ChromaDB, Ollama
-- 核心实践：独立完成从 Streamlit 原型到 FastAPI 工程化封装的完整演进
-- 求职意向：AI 应用开发 / 后端开发 实习岗位
-- 邮箱：[你的邮箱]
 
 ## 开源协议
 
