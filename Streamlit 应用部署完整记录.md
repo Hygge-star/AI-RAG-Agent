@@ -30,10 +30,11 @@ git commit -m "init"
 powershell
 git remote add origin git@github.com:Hygge-star/AI-RAG-Agent-.git
 ### 2.3 推送遇到问题及解决
-错误信息	原因	解决方案
-fatal: not a git repository 或 Nothing specified, nothing added.	git add 未指定路径	使用 git add . 添加所有文件
-error: src refspec main does not match any	本地分支为 master，推送目标为 main	使用 git push -u origin master
-ssh: connect to host github.com port 22: Connection refused	SSH 端口被阻断或密钥未配置	改用 HTTPS 地址：git remote set-url origin https://github.com/Hygge-star/AI-RAG-Agent-.git
+|错误信息|原因|解决方案|
+| ---- | ---- | ---- |
+|fatal: not a git repository 或 Nothing specified, nothing added.|git add 未指定路径|使用 git add . 添加所有文件|
+|error: src refspec main does not match any|本地分支为 master，推送目标为 main|使用 git push -u origin master|
+|ssh: connect to host github.com port 22: Connection refused|SSH 端口被阻断或密钥未配置|改用 HTTPS 地址：git remote set - url origin https://github.com/Hygge - star/AI - RAG - Agent.git|
 最终成功推送命令：
 
 **powershell**
@@ -144,12 +145,13 @@ git push origin master
 访问控制生效，仅受邀用户可见
 
 ## 7. 经验总结
-阶段	常见问题	解决方案
-Git 推送	分支名不匹配、SSH 连接失败	使用正确的分支名，必要时改用 HTTPS
-依赖管理	特定版本不存在、Python 版本不兼容	使用普通版本号，添加 runtime.txt 指定 Python
-环境变量	API Key 缺失	通过 Streamlit Secrets 安全配置
-代码参数	参数名错误	查阅库文档，使用正确的参数名（如 dashscope_api_key）
-安全	API 额度被滥用	设置应用私密访问或邀请特定用户
+|阶段|常见问题|解决方案|
+| ---- | ---- | ---- |
+|Git 推送|分支名不匹配、SSH 连接失败|使用正确的分支名，必要时改用 HTTPS|
+|依赖管理|特定版本不存在、Python 版本不兼容|使用普通版本号，添加 runtime.txt 指定 Python|
+|环境变量|API Key 缺失|通过 Streamlit Secrets 安全配置|
+|代码参数|参数名错误|查阅库文档，使用正确的参数名（如 dashscope_api_key）|
+|安全|API 额度被滥用|设置应用私密访问或邀请特定用户|
 ## 8. 相关文件
 requirements.txt - 项目依赖
 
