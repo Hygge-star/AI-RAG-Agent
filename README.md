@@ -187,21 +187,7 @@ docker run -d -p 8000:8000 --env-file .env rag-agent-api
 - 单元测试更容易编写：可以直接测试 `services/` 中的函数，也可以使用 `TestClient` 测试 API 端点。
 
 ### 8. 平滑迁移，风险极低
-- **你的原有代码（`agent/`、`rag/`、`chroma_db/` 等）一行都不用改**，只需在 `app/services/` 中写薄薄的 wrapper 调用它们。
+- **原有代码（`agent/`、`rag/`、`chroma_db/` 等）一行都不用改**，只需在 `app/services/` 中写薄薄的 wrapper 调用它们。
 - 旧的 `app.py`（Streamlit 入口）可以重命名保留，与 FastAPI 同时运行（不同端口），逐步过渡。
 
-### 一个最直接的对比场景
-| 之前 | 之后 |
-|------|------|
-| 只能通过命令行或 Streamlit 界面使用 | 任何客户端通过 HTTP 调用 |
-| 无法被其他服务集成 | 可作为独立微服务被编排 |
-| 无自动 API 文档 | Swagger UI 开箱即用 |
-| 部署需要手动运行脚本 | `docker run` 一键启动 |
-| 性能受限于 Streamlit 单线程 | 异步高并发，支持负载均衡 |
-
-**总结**：封装成 FastAPI 并非只是“换个框架”，而是让你的 RAG+LangGraph Agent 从一个**脚本/工具**，进化为一个**企业级、可扩展、易协作的后端服务**。如果你需要我帮你把原来的 `agent` 模块中某个具体类（比如 `YourLangGraphAgent`）封装成 FastAPI 依赖的示例代码，请贴出关键片段，我可以直接为你写适配代码。
-
-## 开源协议
-
-MIT License
-```
+**总结**：封装成 FastAPI 并非只是“换个框架”，而是让 RAG+LangGraph Agent 从一个**脚本/工具**，进化为一个**企业级、可扩展、易协作的后端服务**。
