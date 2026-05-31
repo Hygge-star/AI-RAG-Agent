@@ -121,9 +121,6 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```bash
 docker build -t knowledge-assistant .
 ```
-
-- 第一次构建会较慢（下载基础镜像和依赖），后续构建会利用缓存加速。
-
 ---
 
 ### 七、运行容器
@@ -171,7 +168,7 @@ docker run -d --name my-assistant -p 8000:8000 --env-file .env knowledge-assista
 
 ---
 
-### 十、总结：核心技能
+### 十、总结
 
 1. **在 Windows 上配置 WSL 2 和 Docker Desktop**。
 2. **编写 Dockerfile 将 Python 项目容器化**。
@@ -254,19 +251,16 @@ FastAPI 服务监听在容器内部的 `0.0.0.0:8000`。但是容器有自己的
     ↓
 FastAPI 处理请求并返回
 ```
-
-如果没有端口映射，你只能从容器内部访问（比如 `docker exec` 进去后用 `curl localhost:8000`）。
-
 ---
 
 ### 十三、项目中遇到的问题与解决方法
 
 #### Q1：容器启动后立即退出，日志显示 `DASHSCOPE_API_KEY` 找不到。
-**原因**：你的代码需要阿里云通义千问的 API 密钥，但容器中没有这个环境变量。  
+**原因**：代码需要阿里云通义千问的 API 密钥，但容器中没有这个环境变量。  
 **解决**：运行时加上 `-e DASHSCOPE_API_KEY="你的密钥"`，或使用 `--env-file .env`。
 
 #### Q2：`docker run` 报端口已被占用（`bind: address already in use`）。
-**原因**：宿主机 8000 端口已经被其他程序（比如你本地直接运行的 FastAPI）占用了。  
+**原因**：宿主机 8000 端口已经被其他程序（比如本地直接运行的 FastAPI）占用了。  
 **解决**：换个端口，比如 `-p 8080:8000`，然后访问 `localhost:8080`。
 
 #### Q3：构建镜像时 `pip install` 很慢或失败。
