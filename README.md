@@ -58,7 +58,7 @@ Response 200:
 
 ### 1. 克隆仓库
 ```bash
-git clone https://github.com/你的用户名/rag-agent-fastapi.git
+git clone https://github.com/你的用户名/AI-RAG-Agent.git
 cd rag-agent-fastapi
 ```
 
@@ -105,7 +105,7 @@ streamlit run streamlit_app.py
 ## 项目结构
 
 ```
-rag-agent-fastapi/
+AI-RAG-Agent/
 ├── app/                         # FastAPI 应用主目录
 │   ├── main.py                  # 应用入口，路由注册
 │   ├── api/                     # 接口路由层
